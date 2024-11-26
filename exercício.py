@@ -9,12 +9,14 @@ def adicionar_material(stock):
       quantidade = int(input(f"Quantidade inicial de {nome}: "))
       stock[nome] = quantidade
       print(f"{nome} adicionado com sucesso!")
+
 def consultar_stock(stock):
   nome = input("Nome do material para consulta: ")
   if nome in stock:
       print(f"O stock atual de {nome} é: {stock[nome]}")
   else:
       print(f"{nome} não encontrado no stock.")
+
 def atualizar_stock(stock):
   nome = input("Nome do material a atualizar: ")
   if nome in stock:
@@ -33,12 +35,23 @@ def atualizar_stock(stock):
           print("Operação inválida!")
   else:
       print(f"{nome} não encontrado no stock.")
+
 def exibir_stock(stock):
   print("\nEstado Geral do Stock:")
   print("Material\tQuantidade")
   print("-" * 30)
   for material, quantidade in stock.items():
       print(f"{material}\t\t{quantidade}")
+    
+def exportar_stock(stock):
+  print("\nEstado Geral do Stock:")
+  print("Material\tQuantidade")
+  print("-" * 30)
+  for material, quantidade in stock.items():
+      print(f"{material}\t\t{quantidade}")
+ficheiro = open("exercicio.txt", "w+")
+print(file=ficheiro)
+
 def main():
   stock = {}
   while True:
@@ -47,7 +60,8 @@ def main():
       print("2. Consultar Stock")
       print("3. Atualizar Stock")
       print("4. Exibir Stock Geral")
-      print("5. Sair")
+      print("5. Exportar stock para ficheiro")
+      print("6. Sair")
       opcao = input("Escolha uma opção: ")
 
       if opcao == "1":
@@ -59,9 +73,12 @@ def main():
       elif opcao == "4":
           exibir_stock(stock)
       elif opcao == "5":
+          exportar_stock(stock)
+      elif opcao == "6":
           print("Encerrando o programa...")
           break
       else:
           print("Opção inválida! Tente novamente.")
+
 if __name__ == "__main__":
   main()
