@@ -3,7 +3,8 @@
 Desenvolver um programa em Python que utiliza funções para gerir o stock de materiais escolares de uma escola. O programa deverá permitir o registo, consulta e atualização do stock de forma eficiente.
 
 <h3> Requisitos </h3>
-O programa deve:
+
+**O programa deve:**
 
 Registar novos materiais no stock.
 
@@ -15,7 +16,7 @@ Exibir o estado geral do stock.
 
 <h3> Estrutura do programa </h3>
 
-O programa será composto pelas seguintes funções:
+**O programa será composto pelas seguintes funções:**
 
 adicionar_material(): Para registar novos materiais.
 
